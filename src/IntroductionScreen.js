@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 20,
-    backgroundColor: '#A6D5FA',
+    backgroundColor: '#FFFFFF',
   },
   title: {
     fontSize: 24,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   button: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#956A64',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',

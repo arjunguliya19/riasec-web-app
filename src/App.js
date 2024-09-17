@@ -269,7 +269,7 @@ const App = () => {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px',
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#FFFFFF',
      }}>
         <h1 style={styles.heading}>Your RIASEC Profile</h1>
         
@@ -296,7 +296,7 @@ const App = () => {
             
 	    <Bar 
                dataKey="value" 
-               fill="#2196F3" 
+               fill="#956A64" 
                barSize={75}
                label={{
           	position: 'top',
@@ -346,7 +346,7 @@ const App = () => {
       alignItems: 'center',
       justifyContent: 'center',
       minHeight: '100vh',
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#FFFFFF',
       textAlign: 'center',
       padding: '20px',
     }}>
@@ -365,7 +365,6 @@ const App = () => {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        maxWidth: '300px',
       }}>
         {['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'].map((label, index) => (
           <button
@@ -376,7 +375,7 @@ const App = () => {
               padding: '10px 20px',
               width: '100%',
 	      maxWidth: '300px',
-              backgroundColor: '#2196F3',
+              backgroundColor: '#956A64',
               color: 'white',
               border: 'none',
               borderRadius: '5px',
@@ -414,8 +413,10 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     padding: '20px',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#FFFFFF',
     minHeight: '100vh',
   },
   heading: {
@@ -440,6 +441,9 @@ const styles = {
   },
   buttonContainer: {
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   scoreText: {
     fontSize: '16px',
