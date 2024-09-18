@@ -4,12 +4,12 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 const IntroductionScreen = ({ onStartTest }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Welcome to the RIASEC Test</Text>
+      <Text style={styles.title}>Welcome to the Career Identifier Test by CyberSharp</Text>
       
-      <Text style={styles.subtitle}>About the RIASEC Model</Text>
+      <Text style={styles.subtitle}>About the Test</Text>
       <Text style={styles.text}>
-        The RIASEC model, also known as Holland Codes, is a theory of careers and vocational choice 
-        based upon personality types. It was developed by John L. Holland and includes six categories:
+        The test uses RIASEC model, which is a theory of careers and vocational choice 
+        based upon personality types. It includes six categories:
       </Text>
       <Text style={styles.list}>
         • Realistic (R) • Investigative (I) • Artistic (A){"\n"}
