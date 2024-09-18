@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/riasec-web-app/static/js/main.6906b966.js",
+    "main.js": "/riasec-web-app/static/js/main.cbb91815.js",
     "index.html": "/riasec-web-app/index.html",
-    "main.6906b966.js.map": "/riasec-web-app/static/js/main.6906b966.js.map"
+    "main.cbb91815.js.map": "/riasec-web-app/static/js/main.cbb91815.js.map"
   },
   "entrypoints": [
-    "static/js/main.6906b966.js"
+    "static/js/main.cbb91815.js"
   ]
 }
