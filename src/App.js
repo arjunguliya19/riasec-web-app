@@ -93,76 +93,218 @@ const questions = [
 
 const careerSuggestions = {
   R: [
-    "Mechanical Engineer",
-    "Civil Engineer",
-    "Agriculturist",
-    "Electrician",
-    "Chef",
-    "Physiotherapist",
-    "Fitness Trainer",
-    "Automobile Technician",
-    "Textile Designer",
-    "Forest Ranger"
+    	"Agriculturist",
+	"Architect",
+	"Athlete",
+	"Biologist",
+	"Chef",
+	"Chemist",
+	"Company Secretary",
+	"Defence (Military) Service",
+	"Dentist",
+	"Engineer",
+	"Fashion Designer",
+	"Firefighter",
+	"Fitness Trainer",
+	"Graphic Designer",
+	"Information Technology",
+	"Model (people)",
+	"Musician",
+	"Naturalist",
+	"Nurse",
+	"Outdoor Recreation",
+	"Photographer",
+	"Physical Therapist",
+	"Sports Medicine",
+	"Statistician",
+	"Surgeon",
+	"Technician",
+	"Veterinarian",
+	"Web Developer",
+	"Zoologist"
   ],
+
   I: [
-    "Data Scientist",
-    "Software Engineer",
-    "Research Scientist",
-    "Biotechnologist",
-    "Economist",
-    "Pharmacologist",
-    "Mathematician",
-    "Archaeologist",
-    "Robotics Engineer",
-    "Environmental Scientist"
+    	"Accountant",
+	"Actuary",
+	"Archaeologist",
+	"Auditor",
+	"Biologist",
+	"Biotechnologist",
+	"Carpenter",
+	"Certified Public Accountant (CPA)",
+	"Chartered Accountant (CA)",
+	"Chemist",
+	"Community/Public Health Workers",
+	"Counselor",
+	"Data Scientist",
+	"Dietician/Nutritionist ",
+	"Doctor (Medical School/Medical Research)",
+	"Economist",
+	"Engineer",
+	"Environmental Scientist",
+	"Epidemiologist",
+	"Financial Analyst",
+	"Information Technology",
+	"Investigative Reporter",
+	"Lawyer",
+	"Librarian",
+	"Paralegal",
+	"Pharmacologist",
+	"Physical Therapist",
+	"Physicist",
+	"Psychologist",
+	"Researcher",
+	"Social Worker",
+	"Sports Medicine",
+	"Surgeon"
   ],
+
   A: [
-    "Graphic Designer",
-    "Fashion Designer",
-    "Film Director",
-    "Advertising Creative",
-    "Architect",
-    "Dancer/Choreographer",
-    "Interior Designer",
-    "Music Composer",
-    "Content Writer",
-    "UI/UX Designer"
+    	"Architect",
+	"Artist",
+	"Author (Fiction)",
+	"Broadcast Journalist",
+	"Copy Editor",
+	"Creative Writers",
+	"Culinary Artist",
+	"Entrepreneur",
+	"Fashion Designer",
+	"Film Director",
+	"Graphic Designer",
+	"Interior Designer",
+	"Landscape Artist/Designer",
+	"Lyricists",
+	"Model (people)",
+	"Musician",
+	"Music Composer",
+	"Naturalist",
+	"Photographer",
+	"Poets",
+	"Proofreader",
+	"Psychologist",
+	"Sculpturer",
+	"Technical Writer",
+	"Translator",
+	"UI/UX Designer",
+	"Web Developer"
   ],
+
   S: [
-    "Teacher",
-    "Social Worker",
-    "Psychologist",
-    "Human Resources Manager",
-    "Nurse",
-    "Customer Service Representative",
-    "Career Counselor",
-    "NGO Administrator",
-    "Yoga Instructor",
-    "Public Relations Specialist"
+	"Academic Advisors",
+	"Aerobics Teacher",
+	"Career Counselors",
+	"Community/Public Health Workers",
+	"Community Organizer",
+	"Counselors (various)/Advisers",
+	"Customer Service",
+	"Dietician/Nutritionist",
+	"Doctor (Medical school/Medical research)",
+	"Educational Administration",
+	"Educational Consultant",
+	"Epidemiologist",
+	"Financial Planner",
+	"Firefighter",
+	"Fitness Trainer",
+	"Foreign Service/Diplomat",
+	"Guide/School Counselor",
+	"Human Resources",
+	"Lawyer",
+	"Librarian",
+	"Naturalist",
+	"Nurse",
+	"Pharmacist",
+	"Physical Therapist",
+	"Psychologist",
+	"Social Advocate",
+	"Social Entrepreneur",
+	"Social Worker",
+	"Sociologist",
+	"Sports Medicine",
+	"Surgeon",
+	"Teacher",
+	"Translator",
+	"Tutor",
+	"Veterinarian",
+	"Yoga Instructor"
   ],
+
   E: [
-    "Entrepreneur",
-    "Sales Manager",
-    "Business Consultant",
-    "Marketing Manager",
-    "Lawyer",
-    "Real Estate Agent",
-    "Investment Banker",
-    "Hotel Manager",
-    "Event Planner",
-    "Politician"
+	"Actuary",
+	"Advertising",
+	"Aerobics Teacher",
+	"Architect",
+	"Broadcast Journalism",
+	"Broker or Agent",
+	"Business Owner",
+	"Certified Public Accountant (CPA)",
+	"Chartered Accountant (CA)",
+	"Community / Public Health Workers",
+	"Consultant",
+	"Culinary Arts",
+	"Customer Service",
+	"Dietician/Nutritionist",
+	"Educational Administration",
+	"Educational Consultant",
+	"Entrepreneur",
+	"Event Planner",
+	"Fashion Designer",
+	"Financial Analyst",
+	"Financial Planner",
+	"Firefighter",
+	"Fitness Trainer",
+	"Foreign Service/Diplomat",
+	"Fundraising",
+	"Graphic Designer",
+	"Human Resources",
+	"Interior Designer",
+	"Investment Banker",
+	"Lawyer",
+	"Market Research Analyst",
+	"Marketing",
+	"Model (people)",
+	"Musician",
+	"Paralegal",
+	"Photographer",
+	"Politician",
+	"Property Manager",
+	"Public Relations/Publicity",
+	"Real Estate Agent",
+	"Sales",
+	"Trainer"
   ],
   C: [
-    "Accountant",
-    "Bank Officer",
-    "Financial Analyst",
-    "Actuary",
-    "Auditor",
-    "Librarian",
-    "Logistics Coordinator",
-    "Quality Assurance Specialist",
-    "Legal Secretary",
-    "Database Administrator"
+	"Accountant",
+	"Actuary",
+	"Auditor",
+	"Bank Officer",
+	"Certified Public Accountant (CPA)",
+	"Chartered Accountant (CA)",
+	"Chemist",
+	"Company Secretary",
+	"Copy Editor",
+	"Customer Service",
+	"Educational Administration",
+	"Educational Consultant",
+	"Engineer",
+	"Financial Analyst ",
+	"Financial Planner",
+	"Human Resources",
+	"Information Technology",
+	"Librarian",
+	"Nurse",
+	"Office Administration",
+	"Paralegal",
+	"Pharmacist",
+	"Proofreader",
+	"Property Manager",
+	"Real Estate Agent",
+	"Statistician",
+	"Teacher",
+	"Technical Writer",
+	"Technician",
+	"Trainer (business)",
+	"Web Developer"
   ]
 };
 
@@ -173,6 +315,7 @@ const App = () => {
   const [scores, setScores] = useState({ R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 });
   const [testCompleted, setTestCompleted] = useState(false);
   const [showIntroduction, setShowIntroduction] = useState(true);
+const [showAllCareers, setShowAllCareers] = useState(false);
   const [userInfo, setUserInfo] = useState({ name: '', email: '', mobile: '' });
 
   useEffect(() => {
@@ -228,9 +371,9 @@ const App = () => {
   const getCareerSuggestions = (topCategories) => {
     let suggestions = [];
     topCategories.forEach(([category]) => {
-      suggestions = [...suggestions, ...careerSuggestions[category].slice(0, 3)];
+      suggestions = [...suggestions, ...careerSuggestions[category]];
     });
-    return [...new Set(suggestions)]; // Remove duplicates
+    return [...new Set(suggestions)].sort(); // Remove duplicates
   };
 
   const interpretResults = () => {
@@ -382,12 +525,14 @@ const App = () => {
 
         <h3 className="subheading">Top Categories: {results.topCategories.join(", ")}</h3>
         <p className="description">{results.description}</p>
-        <h3 className="subheading">Suggested Careers in India:</h3>
-        {results.careers.map((career, index) => (
-          <p key={index} className="career">{career}</p>
-        ))}
-        <p className="disclaimer">
-          Note: These suggestions are based on your interests. Consider factors like skills, education, and job market demand when making career decisions.
+        <h3 className="subheading">Suggested Careers in India (in alphabetical order):</h3>
+	<p className="explanation"> Based on your interests, below is the list of diverse careers from which you can choose the one that interests you the most.
+	</p>
+        <p className="careers">
+          {results.careers.join(", ")}
+        </p>
+         <p className="disclaimer">
+          Note: These career suggestions are only indicative and are based on your interests. Consider factors like skills, education, and job market demand when making career decisions.
         </p>
       </div>
     );

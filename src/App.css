@@ -128,7 +128,7 @@ body {
 .subheading {
   font-size: 18px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -167,7 +167,7 @@ body {
   font-size: 14px;
   font-style: italic;
   margin-top: 20px;
-  text-align: center;
+  text-align: justify;
 }
 
 .start-test {
@@ -197,6 +197,13 @@ body {
   margin-bottom: 10px;
   color: #000;
 }
+
+.careers {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
