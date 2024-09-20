@@ -2,7 +2,7 @@
   "name": "riasec-web-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arjunguliya19.github.io/riasec-web-app",
+  "homepage": "https://careerchoice.cybersharp.in", //"homepage": "https://arjunguliya19.github.io/riasec-web-app"// 
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -49,3 +49,6 @@
     "react-app-rewired": "^2.2.1"
   }
 }
+
+
+
