@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/riasec-web-app/static/css/main.fe9d903f.css",
-    "main.js": "/riasec-web-app/static/js/main.33f7ee06.js",
-    "index.html": "/riasec-web-app/index.html",
-    "main.fe9d903f.css.map": "/riasec-web-app/static/css/main.fe9d903f.css.map",
-    "main.33f7ee06.js.map": "/riasec-web-app/static/js/main.33f7ee06.js.map"
+    "main.css": "/static/css/main.fe9d903f.css",
+    "main.js": "/static/js/main.33f7ee06.js",
+    "index.html": "/index.html",
+    "main.fe9d903f.css.map": "/static/css/main.fe9d903f.css.map",
+    "main.33f7ee06.js.map": "/static/js/main.33f7ee06.js.map"
   },
   "entrypoints": [
     "static/css/main.fe9d903f.css",
