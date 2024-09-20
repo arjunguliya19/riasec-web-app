@@ -1,17 +1,17 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Bar } from 'recharts';
-import IntroductionScreen from './IntroductionScreen';
+import './App.css';
 
 
 
 const categoryFullNames = {
-  R: "Realistic",
-  I: "Investigative",
-  A: "Artistic",
-  S: "Social",
-  E: "Enterprising",
-  C: "Conventional"
+  R: "Realistic (Doers)",
+  I: "Investigative (Thinkers)",
+  A: "Artistic (Creators)",
+  S: "Social (Helpers)",
+  E: "Enterprising (Persuaders)",
+  C: "Conventional (Organizers)"
 };
 
 
@@ -169,12 +169,23 @@ const careerSuggestions = {
 
 
 const App = () => {
-  console.log('App component rendering');
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState({ R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 });
   const [testCompleted, setTestCompleted] = useState(false);
   const [showIntroduction, setShowIntroduction] = useState(true);
+  const [userInfo, setUserInfo] = useState({ name: '', email: '', mobile: '' });
+
+  useEffect(() => {
+    console.log('State updated:', { showIntroduction, testCompleted });
+  }, [showIntroduction, testCompleted]);
+
+  const handleStartTest = (e) => {
+    e.preventDefault();
+    console.log('Starting the test with user info:', userInfo);
+    setShowIntroduction(false);
+    setCurrentQuestion(0);
+  };
+
 
   const handleAnswer = (answer) => {
     const category = questions[currentQuestion].category;
@@ -226,256 +237,171 @@ const App = () => {
     const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
     const topThree = sortedScores.slice(0, 3);
     
-    const result = {
+    return {
       topCategories: topThree.map(([category]) => category),
       description: getDescription(topThree),
       careers: getCareerSuggestions(topThree)
     };
-
-    return result;
   };
 
 
+  const renderIntroductionAndForm = () => {
+    return (
+      <div className="content">
+        <h1 className="title">Welcome to the Career Identifier Test by CyberSharp</h1>
+        
+        <h2 className="subtitle">How It Helps</h2> 
+        <p className="text">
+          This test helps you identify your predominant personality types, which can guide you 
+          towards career paths that align with your interests and strengths. It can assist in:
+        </p>
+        <ul className="list">
+          <li>Choosing a career</li>
+          <li>Selecting educational programs</li>
+          <li>Understanding your work preferences</li>
+          <li>Identifying potential job satisfaction areas</li>
+        </ul>
+        
+        <h2 className="subtitle">How to Answer the Questions</h2>
+        <ul className="list">
+          <li>Read each statement carefully</li>
+          <li>Respond based on your genuine interests, not what you think you should like</li>
+          <li>Choose the option that best represents your level of agreement</li>
+          <li>Don't overthink – your first instinct is often the most accurate</li>
+          <li>Answer all questions for the most accurate results</li>
+        </ul>
 
-  useEffect(() => {
-    console.log('Current question:', currentQuestion);
-    console.log('Test completed:', testCompleted);
-    console.log('Show introduction:', showIntroduction);
-  }, [currentQuestion, testCompleted, showIntroduction]);
+        <h2 className="subtitle">Please provide your information to start the test:</h2>
+	<p className="text">
+          Since we will be emailing you the results of the test, please ensure your contact details are filled correctly.
+        </p>
+
+        <form onSubmit={handleStartTest} className="form">
+          <input
+            type="text"
+            placeholder="Name"
+            value={userInfo.name}
+            onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}
+            className="input"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={userInfo.email}
+            onChange={(e) => setUserInfo({...userInfo, email: e.target.value})}
+            className="input"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Mobile Number"
+            value={userInfo.mobile}
+            onChange={(e) => setUserInfo({...userInfo, mobile: e.target.value})}
+            className="input"
+            required
+          />
+          <button type="submit" className="button start-test">
+            Start the Test
+          </button>
+        </form>
+      </div>
+    );
+  };
 
 
+  const renderQuestion = () => {
+    return (
+      <div className="content">
+        <p className="question-number">Question {currentQuestion + 1} of {questions.length}</p>
+        <p className="question">{questions[currentQuestion].text}</p>
+        <div className="button-container">
+          {['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'].map((label, index) => (
+            <button
+              key={label}
+              onClick={() => handleAnswer(index)}
+              className="answer-button"
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
 
   const renderResults = () => {
-    console.log('Rendering results');
     const percentages = calculatePercentages();
-    console.log('Calculated percentages:', percentages);
     const results = interpretResults();
-    console.log('Interpreted results:', results);
-
-
-     const chartData = Object.entries(percentages).map(([category, value]) => ({
+    const chartData = Object.entries(percentages).map(([category, value]) => ({
       name: categoryFullNames[category],
       value: parseFloat(value.toFixed(1))
     }));
-    
-    console.log('Chart data:', chartData);
 
 
-  return (
-     <div style={{
-      ...styles.container,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '20px',
-      backgroundColor: '#FFFFFF',
-     }}>
-        <h1 style={styles.heading}>Your RIASEC Profile</h1>
+    return (
+      <div className="content">
+        <h1 className="heading">Your RIASEC Profile</h1>
         
-        <h2 style={styles.subheading}>Category Scores:</h2>
+        <h2 className="subheading">Category Scores:</h2>
 
-        <div style={{
-        width: '100%',
-        height: '300px',
-        marginBottom: '20px',
-      }}>
-        
-       <div style={{
-  	width: '100%',
-  	height: '300px',
-  	marginBottom: '20px',
-       }}>
-        <ResponsiveContainer>
-          <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis domain={[0, 100]} tickCount={6} tickFormatter={(value) => `${value}%`} />
-            <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, "Score"]} />
-            <Legend />
-            
-	    <Bar 
-               dataKey="value" 
-               fill="#956A64" 
-               barSize={75}
-               label={{
-          	position: 'top',
-          	formatter: (value) => `${value.toFixed(1)}%`,
-          	fill: '#666',
-          	fontSize: 12
-              }}
-            />
+        <div className="chart-container">
+          <ResponsiveContainer>
+            <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis domain={[0, 100]} tickCount={6} tickFormatter={(value) => `${value}%`} />
+              <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, "Score"]} />
+              <Legend />
+              <Bar 
+                dataKey="value" 
+                fill="#956A64" 
+                label={{
+                  position: 'top',
+                  formatter: (value) => `${value.toFixed(1)}%`,
+                  fill: '#666',
+                  fontSize: 12
+                }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
 
-          </BarChart>
-        </ResponsiveContainer>
-       </div>
-      </div>
+        {Object.entries(percentages).map(([category, percentage]) => (
+          <p key={category} className="score-text">
+            {categoryFullNames[category]}: {percentage.toFixed(1)}%
+          </p>
+        ))}
 
-      {Object.entries(percentages).map(([category, percentage]) => (
-        <p key={category} style={styles.scoreText}>
-          {categoryFullNames[category]}: {percentage.toFixed(1)}%
-        </p>
-      ))}
-
-        
-        <p style={styles.explanation}>
+        <p className="explanation">
           These percentages represent your interest level in each RIASEC category. 
           Higher percentages indicate stronger interest and alignment with those career types. 
           Your top categories suggest career paths that may be most satisfying for you.
         </p>
 
-        <h3 style={styles.subheading}>Top Categories: {results.topCategories.join(", ")}</h3>
-        <p style={styles.description}>{results.description}</p>
-        <h3 style={styles.subheading}>Suggested Careers in India:</h3>
+        <h3 className="subheading">Top Categories: {results.topCategories.join(", ")}</h3>
+        <p className="description">{results.description}</p>
+        <h3 className="subheading">Suggested Careers in India:</h3>
         {results.careers.map((career, index) => (
-          <p key={index} style={styles.career}>{career}</p>
+          <p key={index} className="career">{career}</p>
         ))}
-        <p style={styles.disclaimer}>
+        <p className="disclaimer">
           Note: These suggestions are based on your interests. Consider factors like skills, education, and job market demand when making career decisions.
         </p>
       </div>
     );
   };
 
-  const renderQuestion = () => {
-   return (
-    <div style={{
-      ...styles.container,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      backgroundColor: '#FFFFFF',
-      textAlign: 'center',
-      padding: '20px',
-    }}>
-      <div style={{
-        maxWidth: '600px',
-        width: '100%',
-      }}>
-
-      <p style={styles.questionNumber}>Question {currentQuestion + 1} of {questions.length}</p>
-      <p style={{...styles.question, marginBottom: '30px', maxWidth: '600px'}}>
-        {questions[currentQuestion].text}
-      </p>
-      <div style={{
-        ...styles.buttonContainer,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%',
-      }}>
-        {['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'].map((label, index) => (
-          <button
-            key={label}
-            onClick={() => handleAnswer(index)}
-            style={{
-              margin: '10px 0',
-              padding: '10px 20px',
-              width: '100%',
-	      maxWidth: '300px',
-              backgroundColor: '#956A64',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-     </div>
-    </div>
-   );
-  };
-
-
-  console.log ('Rendering main component');
 
   return (
-    <div style={styles.container}>
-      {showIntroduction ? (
-        <IntroductionScreen onStartTest={() => setShowIntroduction(false)} />
-      ) : testCompleted ? (
-        renderResults()
-      ) : (
-        renderQuestion()
-      )}
+    <div className="container">
+      {showIntroduction && renderIntroductionAndForm()}
+      {!showIntroduction && !testCompleted && renderQuestion()}
+      {testCompleted && renderResults()}
     </div>
   );
 };
 
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    padding: '20px',
-    backgroundColor: '#FFFFFF',
-    minHeight: '100vh',
-  },
-  heading: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-  },
-  subheading: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    marginTop: '15px',
-    marginBottom: '10px',
-  },
-  questionNumber: {
-    fontSize: '16px',
-    marginBottom: '10px',
-  },
-  question: {
-    fontSize: '18px',
-    marginBottom: '20px',
-    textAlign: 'center',
-  },
-  buttonContainer: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  scoreText: {
-    fontSize: '16px',
-    marginBottom: '5px',
-  },
-  explanation: {
-    fontSize: '14px',
-    marginTop: '10px',
-    marginBottom: '10px',
-    textAlign: 'justify',
-    fontStyle: 'italic',
-  },
-  description: {
-    fontSize: '16px',
-    textAlign: 'justify',
-    marginBottom: '15px',
-  },
-  career: {
-    fontSize: '16px',
-    marginBottom: '5px',
-  },
-  disclaimer: {
-    fontSize: '14px',
-    fontStyle: 'italic',
-    marginTop: '20px',
-    textAlign: 'center',
-  },
-  chartContainer: {
-    width: '100%',
-    height: '300px',
-    marginVertical: '20px',
-  },
-};
 
 export default App;

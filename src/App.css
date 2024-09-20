@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.list {
+  font-size: 16px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: #956A64;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.question-number {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.question {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.answer-button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #956A64;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.subheading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.score-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.explanation {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+  font-style: italic;
+}
+
+.description {
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.career {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.disclaimer {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.start-test {
+  display: block;
+  margin: 20px auto 0;
+}
+
+.proceed-button {
+  display: block;
+  margin: 20px auto 0;
+  max-width: 250px;
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px; /* Increased from 20px to 40px */
+  color: #000;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px; /* Added margin-top */
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .title {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .text, .list {
+    font-size: 14px;
+  }
+
+  .button, .answer-button {
+    font-size: 14px;
+  }
+
+  .question {
+    font-size: 16px;
   }
 }
