@@ -104,13 +104,11 @@ const careerSuggestions = {
 	"Dentist",
 	"Engineer",
 	"Fashion Designer",
-	"Firefighter",
 	"Fitness Trainer",
 	"Graphic Designer",
 	"Information Technology",
-	"Model (people)",
+	"Model/Actor",
 	"Musician",
-	"Naturalist",
 	"Nurse",
 	"Outdoor Recreation",
 	"Photographer",
@@ -131,8 +129,6 @@ const careerSuggestions = {
 	"Auditor",
 	"Biologist",
 	"Biotechnologist",
-	"Carpenter",
-	"Certified Public Accountant (CPA)",
 	"Chartered Accountant (CA)",
 	"Chemist",
 	"Community/Public Health Workers",
@@ -174,11 +170,10 @@ const careerSuggestions = {
 	"Graphic Designer",
 	"Interior Designer",
 	"Landscape Artist/Designer",
-	"Lyricists",
-	"Model (people)",
+	"Lyricist",
+	"Model/Actor",
 	"Musician",
 	"Music Composer",
-	"Naturalist",
 	"Photographer",
 	"Poets",
 	"Proofreader",
@@ -204,14 +199,12 @@ const careerSuggestions = {
 	"Educational Consultant",
 	"Epidemiologist",
 	"Financial Planner",
-	"Firefighter",
 	"Fitness Trainer",
 	"Foreign Service/Diplomat",
 	"Guide/School Counselor",
 	"Human Resources",
 	"Lawyer",
 	"Librarian",
-	"Naturalist",
 	"Nurse",
 	"Pharmacist",
 	"Physical Therapist",
@@ -237,11 +230,10 @@ const careerSuggestions = {
 	"Broadcast Journalism",
 	"Broker or Agent",
 	"Business Owner",
-	"Certified Public Accountant (CPA)",
 	"Chartered Accountant (CA)",
-	"Community / Public Health Workers",
+	"Community/Public Health Workers",
 	"Consultant",
-	"Culinary Arts",
+	"Culinary Artist",
 	"Customer Service",
 	"Dietician/Nutritionist",
 	"Educational Administration",
@@ -251,34 +243,32 @@ const careerSuggestions = {
 	"Fashion Designer",
 	"Financial Analyst",
 	"Financial Planner",
-	"Firefighter",
 	"Fitness Trainer",
 	"Foreign Service/Diplomat",
-	"Fundraising",
+	"Fundraising Consultant",
 	"Graphic Designer",
-	"Human Resources",
+	"Human Resource Manager",
 	"Interior Designer",
 	"Investment Banker",
 	"Lawyer",
 	"Market Research Analyst",
-	"Marketing",
-	"Model (people)",
+	"Marketing Manager",
+	"Model/Actor",
 	"Musician",
 	"Paralegal",
 	"Photographer",
 	"Politician",
-	"Property Manager",
 	"Public Relations/Publicity",
 	"Real Estate Agent",
-	"Sales",
+	"Sales Manager",
 	"Trainer"
   ],
+  
   C: [
 	"Accountant",
 	"Actuary",
 	"Auditor",
 	"Bank Officer",
-	"Certified Public Accountant (CPA)",
 	"Chartered Accountant (CA)",
 	"Chemist",
 	"Company Secretary",
@@ -293,7 +283,6 @@ const careerSuggestions = {
 	"Information Technology",
 	"Librarian",
 	"Nurse",
-	"Office Administration",
 	"Paralegal",
 	"Pharmacist",
 	"Proofreader",
@@ -306,6 +295,139 @@ const careerSuggestions = {
 	"Trainer (business)",
 	"Web Developer"
   ]
+};
+
+
+const careerCategories = {
+
+  "Creative and Design Careers": [
+	"Architect",
+	"Artist",
+	"Author (Fiction)",
+	"Broadcast Journalism",
+	"Chef",
+	"Copy Editor",
+	"Creative Writers",
+	"Culinary Artist",
+	"Fashion Designer",
+	"Film Director",
+	"Graphic Designer",
+	"Interior Designer",
+	"Investigative Reporter",
+	"Landscape Artist/Designer",
+	"Lyricists",
+	"Model/Actor",
+	"Music Composer",
+	"Musician",
+	"Photographer",
+	"Poets",
+	"Proofreader",
+	"Sculpturer",
+	"Technical Writer",
+	"UI/UX Designer"
+  ],
+
+  "Entrepreneurial and Enterprising Careers": [
+	"Broker or Agent",
+	"Business Owner",
+	"Consultant",
+	"Entrepreneur",
+	"Event Planner",
+	"Foreign Service/Diplomat",
+	"Politician",
+	"Real Estate Agent"
+  ],
+
+  "Finance and Legal Careers": [
+	"Accountant",
+	"Actuary",
+	"Auditor",
+	"Bank Officer",
+	"Chartered Accountant (CA)",
+	"Company Secretary",
+	"Economist",
+	"Financial Analyst ",
+	"Financial Planner",
+	"Fundraising Consultant",
+	"Investment Banker",
+	"Lawyer",
+	"Paralegal"
+  ],
+
+  "Health, Medicine, and Life Sciences Careers":  [
+	"Biologist",
+	"Biotechnologist",
+	"Chemist",
+	"Community/Public Health Workers",
+	"Dentist",
+	"Dietician/Nutritionist ",
+	"Doctor (Medical school/Medical research)",
+	"Epidemiologist",
+	"Nurse",
+	"Pharmacist",
+	"Pharmacologist",
+	"Physical Therapist",
+	"Sports Medicine",
+	"Surgeon",
+	"Veterinarian",
+	"Zoologist"
+  ],
+
+  "Physical and Outdoor Careers":  [
+	"Aerobics Teacher",
+	"Agriculturist",
+	"Athlete",
+	"Defence (Military) Service",
+	"Fitness Trainer",
+	"Outdoor Recreation",
+	"Yoga Instructor"
+  ],
+
+  "Sales, Marketing and HR Careers": [
+	"Advertising",
+	"Customer Service",
+	"Human Resource Manager",
+	"Market Research Analyst",
+	"Marketing Manager",
+	"Public Relations/Publicity",
+	"Sales Manager"
+  ],
+
+  "Social, Educational, and Counseling Careers": [
+	"Academic Advisors",
+	"Career Counselors",
+	"Community Organizer",
+	"Counselor",
+	"Counselors (various)/Advisers",
+	"Educational Administration",
+	"Educational Consultant",
+	"Guide/School Counselor",
+	"Librarian",
+	"Psychologist",
+	"Social Advocate",
+	"Social Entrepreneur",
+	"Social Worker",
+	"Sociologist",
+	"Teacher",
+	"Trainer",
+	"Trainer (business)",
+	"Translator",
+	"Tutor"
+  ],
+
+  "Technology, Engineering, and Science Careers": [
+	"Archaeologist",
+	"Data Scientist",		
+	"Engineer",
+	"Environmental Scientist",
+	"Information Technology",
+	"Physicist",
+	"Researcher",
+	"Statistician",
+	"Technician",
+	"Web Developer"
+  ]
+
 };
 
 
@@ -375,6 +497,19 @@ const [showAllCareers, setShowAllCareers] = useState(false);
     });
     return [...new Set(suggestions)].sort(); // Remove duplicates
   };
+
+
+  const categorizeCareerSuggestions = (careers) => {
+    const categorized = {};
+    Object.entries(careerCategories).forEach(([category, careerList]) => {
+      const matchingCareers = careers.filter(career => careerList.includes(career));
+      if (matchingCareers.length > 0) {
+        categorized[category] = matchingCareers;
+      }
+    });
+    return categorized;
+  };
+
 
   const interpretResults = () => {
     const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
@@ -482,6 +617,7 @@ const [showAllCareers, setShowAllCareers] = useState(false);
       value: parseFloat(value.toFixed(1))
     }));
 
+ const categorizedCareers = categorizeCareerSuggestions(results.careers);
 
     return (
       <div className="content">
@@ -528,9 +664,12 @@ const [showAllCareers, setShowAllCareers] = useState(false);
         <h3 className="subheading">Suggested Careers in India (in alphabetical order):</h3>
 	<p className="explanation"> Based on your interests, below is the list of diverse careers from which you can choose the one that interests you the most.
 	</p>
-        <p className="careers">
-          {results.careers.join(", ")}
-        </p>
+        {Object.entries(categorizedCareers).map(([category, careers]) => (
+          <div key={category} className="career-category">
+            <h4 className="category-title">{category}</h4>
+            <p className="careers">{careers.join(", ")}</p>
+          </div>
+        ))}
          <p className="disclaimer">
           Note: These career suggestions are only indicative and are based on your interests. Consider factors like skills, education, and job market demand when making career decisions.
         </p>
