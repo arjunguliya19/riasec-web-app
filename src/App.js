@@ -513,7 +513,7 @@ const [showAllCareers, setShowAllCareers] = useState(false);
 
   const interpretResults = () => {
     const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-    const topThree = sortedScores.slice(0, 3);
+    const topThree = sortedScores.slice(0, 2);
     
     return {
       topCategories: topThree.map(([category]) => category),
@@ -613,7 +613,8 @@ const [showAllCareers, setShowAllCareers] = useState(false);
     const percentages = calculatePercentages();
     const results = interpretResults();
     const chartData = Object.entries(percentages).map(([category, value]) => ({
-      name: categoryFullNames[category],
+      name: category,
+      fullName: categoryFullNames[category],
       value: parseFloat(value.toFixed(1))
     }));
 
@@ -621,8 +622,11 @@ const [showAllCareers, setShowAllCareers] = useState(false);
 
     return (
       <div className="content">
-        <h1 className="heading">Your RIASEC Profile</h1>
-        
+        <h1 className="heading">Your Career Identifier Test Results Interpretation</h1>
+        <p className="explanation">
+          Let's now understand your predominant personality types, and the career paths that align with your interests and strengths. Research shows that personalities seek out and flourish in career environments they fit and that jobs and career environments are classifiable by the personalities that flourish in them. The personality types are categoried into 6 major categories - Realistic (Doers), Investigative (Thinkers), Artistic (Creators), Social (Helpers), Enterprising (Persuaders), and Conventional (Organizers). The choice of a vocation is an expression of one's personality.
+        </p>
+
         <h2 className="subheading">Category Scores:</h2>
 
         <div className="chart-container">
@@ -631,7 +635,8 @@ const [showAllCareers, setShowAllCareers] = useState(false);
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis domain={[0, 100]} tickCount={6} tickFormatter={(value) => `${value}%`} />
-              <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, "Score"]} />
+              <Tooltip 
+                 formatter={(value, name, props) => [`${value.toFixed(1)}%`, props.payload.fullName]}              />
               <Legend />
               <Bar 
                 dataKey="value" 
@@ -647,6 +652,7 @@ const [showAllCareers, setShowAllCareers] = useState(false);
           </ResponsiveContainer>
         </div>
 
+
         {Object.entries(percentages).map(([category, percentage]) => (
           <p key={category} className="score-text">
             {categoryFullNames[category]}: {percentage.toFixed(1)}%
@@ -654,7 +660,7 @@ const [showAllCareers, setShowAllCareers] = useState(false);
         ))}
 
         <p className="explanation">
-          These percentages represent your interest level in each RIASEC category. 
+          These percentages represent your interest level in each category. 
           Higher percentages indicate stronger interest and alignment with those career types. 
           Your top categories suggest career paths that may be most satisfying for you.
         </p>

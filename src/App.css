@@ -145,8 +145,8 @@ body {
 
 .explanation {
   font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: justify;
   font-style: italic;
 }
@@ -167,6 +167,7 @@ body {
   font-size: 14px;
   font-style: italic;
   margin-top: 20px;
+  margin-bottom: 10px;
   text-align: justify;
 }
 
@@ -186,28 +187,30 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 40px; /* Increased from 20px to 40px */
+  margin-bottom: 40px;
   color: #000;
 }
 
 .subtitle {
   font-size: 20px;
   font-weight: bold;
-  margin-top: 30px; /* Added margin-top */
+  margin-top: 30px;
   margin-bottom: 10px;
   color: #000;
 }
 
 .career-category {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
   background-color: #f8f8f8;
   border-radius: 5px;
-  padding: 15px;
+  padding:5px 15px;
 }
 
 .category-title {
   font-size: 18px;
   font-weight: bold;
+  margin-top: 15px;
   margin-bottom: 10px;
   color: #956A64;
 }
@@ -217,6 +220,7 @@ body {
   line-height: 1.6;
   text-align: justify;
 }
+
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
