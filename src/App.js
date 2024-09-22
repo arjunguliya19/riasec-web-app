@@ -665,9 +665,16 @@ const [showAllCareers, setShowAllCareers] = useState(false);
           Your top categories suggest career paths that may be most satisfying for you.
         </p>
 
-        <h3 className="subheading">Top Categories: {results.topCategories.join(", ")}</h3>
+        <h3 className="subheading">
+          <span style={{ fontWeight: 'bold' }}>Top Categories:</span>{' '}
+          <span style={{ fontWeight: 'normal' }}>
+            {results.topCategories.slice(0, 2).map(category => categoryFullNames[category]).join(", ")}
+          </span>
+        </h3>
+
+	<h3 className="subheading">What it Means:</h3>
         <p className="description">{results.description}</p>
-        <h3 className="subheading">Suggested Careers in India (in alphabetical order):</h3>
+        <h3 className="subheading">Suggested Careers for you in India (in alphabetical order):</h3>
 	<p className="explanation"> Based on your interests, below is the list of diverse careers from which you can choose the one that interests you the most.
 	</p>
         {Object.entries(categorizedCareers).map(([category, careers]) => (
